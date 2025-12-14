@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026: O Ano da Direção | Minuto Direção</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-top: 20px;
+        }
+        
+        h1 {
+            font-size: 42px;
+            color: #1e40af;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            text-align: center;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+        
+        .book-cover {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+        }
+        
+        .book-placeholder {
+            width: 280px;
+            height: 380px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        
+        .book-placeholder h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .book-placeholder p {
+            font-size: 16px;
+            text-align: center;
+            opacity: 0.9;
+        }
+        
+        .section {
+            margin: 40px 0;
+        }
+        
+        .section h2 {
+            font-size: 28px;
+            color: #1e40af;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .benefits {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .benefits li {
+            padding: 18px 20px;
+            margin: 15px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefits li:hover {
+            transform: translateX(10px);
+            background: #e9ecef;
+        }
+        
+        .benefits li::before {
+            content: "✨ ";
+            margin-right: 10px;
+        }
+        
+        .bonus-section {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .bonus-section h2 {
+            color: #d63031;
+            margin-bottom: 25px;
+        }
+        
+        .bonus-item {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .bonus-item::before {
+            content: "🎁 ";
+            margin-right: 10px;
+            font-size: 24px;
+        }
+        
+        .price-section {
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+            margin: 40px 0;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            font-size: 24px;
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+        
+        .new-price {
+            font-size: 56px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .price-detail {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 25px 60px;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            background: #ffed4e;
+        }
+        
+        .guarantee {
+            text-align: center;
+            padding: 30px;
+            background: #e8f5e9;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .guarantee h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .guarantee p {
+            color: #555;
+            font-size: 16px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .urgency {
+            background: #ff6b6b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 30px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            .subtitle {
+                font-size: 18px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .book-placeholder {
+                width: 220px;
+                height: 300px;
+            }
+            
+            .book-placeholder h2 {
+                font-size: 24px;
+            }
+            
+            .new-price {
+                font-size: 42px;
+            }
+            
+            .cta-button {
+                padding: 20px 40px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://i.imgur.com/EpOrp7L.png" alt="Minuto Direção" style="max-width: 200px; margin-bottom: 15px;">
+            <p><a href="https://www.instagram.com/minutodirecao/" style="color: white; text-decoration: none;">@minutodirecao</a></p>
+        </div>
+        
+        <div class="main-content">
+            <h1>2026: O Ano da Direção</h1>
+            <p class="subtitle">Pare de começar o ano pedindo e comece PREPARADO.<br>O guia prático para alinhar seus planos aos de Deus e fazer deste o melhor ano da sua vida.</p>
+            
+            <div class="book-cover">
+                <img src="https://i.imgur.com/2mA80vh.jpg" alt="Capa do E-book 2026: O Ano da Direção" style="max-width: 320px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
+            </div>
+            
+            <div class="urgency">
+                🔥 OFERTA ESPECIAL DE LANÇAMENTO - POR TEMPO LIMITADO
+            </div>
+            
+            <div class="section">
+                <h2>O Que Você Vai Aprender</h2>
+                <ul class="benefits">
+                    <li>Como fazer a <strong>faxina espiritual</strong> e deixar 2025 definitivamente para trás</li>
+                    <li>Os <strong>3 pilares essenciais</strong> que vão sustentar todo o seu ano (e sua vida)</li>
+                    <li>O <strong>Método do Minuto:</strong> 3 minutos diários que transformam tudo</li>
+                    <li>Como diferenciar a voz de Deus da voz da ansiedade</li>
+                    <li><strong>Blindagem contra o medo</strong> para os dias difíceis que virão</li>
+                    <li>Oração profética completa para a virada de ano</li>
+                    <li>Protocolo prático para quando tudo der errado</li>
+                </ul>
+            </div>
+            
+
+            
+            <div class="price-section">
+                <p class="old-price">De R$ 47,00</p>
+                <div class="new-price">R$ 27,00</div>
+                <p class="price-detail">Acesso imediato + Todos os bônus</p>
+                
+                <a href="https://pay.kiwify.com.br/Lhp2FVV" class="cta-button">
+                    🔥 Quero Transformar Meu 2026 Agora
+                </a>
+                
+                <p style="margin-top: 20px; font-size: 16px; opacity: 0.9;">
+                    Pagamento 100% seguro via Kiwify<br>
+                    PIX • Cartão • Boleto
+                </p>
+            </div>
+            
+            <div class="guarantee">
+                <h3>✅ Garantia Incondicional de 7 Dias</h3>
+                <p>Se você não sentir que este e-book vale cada centavo, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Para Quem é Este E-book?</h2>
+                <ul class="benefits">
+                    <li>Você que está <strong>cansado de repetir os mesmos erros</strong> todo ano</li>
+                    <li>Você que quer <strong>ouvir a voz de Deus com clareza</strong>, não só na igreja</li>
+                    <li>Você que precisa de um <strong>método simples e prático</strong>, não de teologia complicada</li>
+                    <li>Você que quer fazer de 2026 o <strong>ano da sua virada espiritual</strong></li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center; margin: 50px 0;">
+                <a href="https://pay.kiwify.com.br/Lhp2FVV" class="cta-button">
+                    🔥 Sim, Eu Quero Meu E-book Agora
+                </a>
+            </div>
+            
+            <div style="text-align: center; padding: 30px; background: #f8f9fa; border-radius: 10px;">
+                <p style="font-size: 18px; color: #666; line-height: 1.8;">
+                    <strong>Não entre em 2026 repetindo os mesmos padrões.</strong><br>
+                    Sua direção começa aqui. Seu melhor ano começa agora.<br><br>
+                    Nos vemos do outro lado. 🙏
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Minuto Direção | Todos os direitos reservados</p>
+            <p style="margin-top: 10px;">📧 Dúvidas? Chame no direct: <strong><a href="https://www.instagram.com/minutodirecao/" style="color: white; text-decoration: none;">@minutodirecao</a></strong></p>
+        </div>
+    </div>
+</body>
+</html>
